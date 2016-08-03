@@ -74,6 +74,7 @@ Each one of these options has sub options
 	value
 	class
 	id
+    label
 
 `item-type` |
 Available Options
@@ -109,6 +110,26 @@ like so:
           }
         }
   ```
+`label` is used to get a `title` tag on your anchor.
+```
+'content': {
+    'facebook': {
+        'item-type': 'icon',
+        'value': 'icon-facebook',
+        'label': 'Facebook'
+    },
+    'twitter': {
+        'item-type': 'icon',
+        'value': 'icon-twitter',
+        'label': 'Twitter'
+    },
+    'googleplus': {
+        'item-type': 'icon',
+        'value': 'icon-google-plus',
+        'label': 'Google Plus'
+    }
+}
+   ```
   
 ###How to call the function
 

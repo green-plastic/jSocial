@@ -4,7 +4,7 @@
  * jSocial
  *
  * @package     jSocial
- * @version     Version 0.1
+ * @version     Version 1.2.0
  * @author      Jerome Duncan
  * @copyright   Copyright (c) 2014
  * @link        itsjero.me
@@ -25,7 +25,7 @@ class jSocialPlugin extends BasePlugin
 
   function getVersion()
   {
-    return '1.1.0a';
+    return '1.2.0';
   }
 
   //Developer Name

@@ -27,36 +27,42 @@ class jSocialTwigExtension extends \Twig_Extension
             'item-type' => 'text',
             'value' => 'Facebook',
             'class' => 'fb',
+            'label' => 'Facebook',
         ),
         'twitter' => array(
             'item-type' => 'text',
             'value' => 'Twitter',
             'class' => 'twitter',
             'id' => null,
+            'label' => 'Twitter',
         ),
         'linkedin' => array(
             'item-type' => 'text',
             'value' => 'Linked In',
             'id' => null,
             'class' => 'linkedin',
+            'label' => 'LinkedIn',
         ),
         'googleplus' => array(
             'item-type' => 'text',
             'value' => 'Google+',
             'id' => null,
             'class' => 'google-plus',
+            'label' => 'Google Plus',
         ),
         'email' => array(
             'item-type' => 'text',
             'value' => 'Email',
             'id' => null,
             'class' => 'email',
+            'label' => 'Email',
         ),
         'print' => array(
             'item-type' => 'text',
             'value' => 'Print',
             'id' => null,
             'class' => 'print',
+            'label' => 'Print',
         ),
 
       )
@@ -111,9 +117,9 @@ class jSocialTwigExtension extends \Twig_Extension
     $size .= "'";
 
     if(isset($options['content'][$btn]['id']))
-      $id = "id='" . $options['content'][$btn]['id'] . "'";
+      $id = "id='" . $options['content'][$btn]['id'] . "' title='" . $options['content'][$btn]['label'] . "'";
     else
-      $id = '';
+      $id = "title='" . $options['content'][$btn]['label'] . "'";
     switch ($options['content'][$btn]['item-type']) {
       case 'image':
         switch ($btn) {
@@ -199,10 +205,10 @@ class jSocialTwigExtension extends \Twig_Extension
             $button = "<!-- the item type was invalid so as a default we used text --><a target='_blank' ". $id ." href='https://plus.google.com/share?url=". $options['url'] ."' class='".$options['class-prefix']. $options['content'][$btn]['class'] ."'> Google+ </a>";
             break;
           case 'email':
-            $button = "<! was invalid so as a default we used text --><a target='_blank' ". $id ."  href='mailto:?subject=" . $options['title'] . "&body=" . $options['url'] . "\n' class='".$options['class-prefix']. $options['content'][$btn]['class'] ."'>" . $options['content'][$btn]['value'] ."</a>";
+            $button = "<!-- was invalid so as a default we used text --><a target='_blank' ". $id ."  href='mailto:?subject=" . $options['title'] . "&body=" . $options['url'] . "\n' class='".$options['class-prefix']. $options['content'][$btn]['class'] ."'>" . $options['content'][$btn]['value'] ."</a>";
             break;
           case 'print':
-            $button = "<! was invalid so as a default we used text --><a target='_blank' ". $id ." href='javascript: window.print();' class='".$options['class-prefix']. $options['content'][$btn]['class'] ."'>". $options['content'][$btn]['value']."</a>";
+            $button = "<!-- was invalid so as a default we used text --><a target='_blank' ". $id ." href='javascript: window.print();' class='".$options['class-prefix']. $options['content'][$btn]['class'] ."'>". $options['content'][$btn]['value']."</a>";
             break;
         }
         break;
